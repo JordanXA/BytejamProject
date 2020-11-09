@@ -41,7 +41,9 @@ public class Enemy : MonoBehaviour
 
         UpdateSprite(movement);
         
-        if (targetPoint > waypoints.Length-1) {
+        if (targetPoint > waypoints.Length-1) { //object reached end of scene. destroy and remove health.
+            GlobalVariables global = GameObject.Find("GameManager").GetComponent<GlobalVariables>();
+            global.health -= 1;
             Destroy(gameObject);
         }
     }
