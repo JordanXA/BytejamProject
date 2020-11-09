@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 231, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 65
+  controlID: 36
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_MinSize: {x: 709, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 15
+  controlID: 80
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -312,19 +312,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders: []
+    m_Folders:
+    - Assets
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\kyler\BytejamProject
+  m_LastProjectPath: C:\Users\kyler\Documents\GitHub\BytejamProject\BytejamProject
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: d03c0000
     m_LastClickedID: 15568
-    m_ExpandedIDs: 
+    m_ExpandedIDs: 0000000030390000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -352,7 +353,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff78480000
+    m_ExpandedIDs: ffffffff0000000030390000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -368,7 +369,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 2}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -477,7 +478,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: f0faffff
+      m_ExpandedIDs: 66fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -537,9 +538,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 0, z: 0}
+    m_Target: {x: -2.0397537, y: -1.2132024, z: -0.8192983}
     speed: 2
-    m_Value: {x: 7.8613043, y: -25.87755, z: 1.9334531}
+    m_Value: {x: -2.0397537, y: -1.2132024, z: -0.8192983}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -589,9 +590,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10
+    m_Target: 6.7251554
     speed: 2
-    m_Value: 22.42466
+    m_Value: 0.8660254
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -708,3 +709,28 @@ MonoBehaviour:
   m_LowResolutionForAspectRatios: 01000000000000000000
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
+--- !u!114 &17
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12059, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEditor:UnityEditor.PackageManager.UI:PackageManagerProjectSettings
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Failed to load
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 320
+    height: 550
+  m_ViewDataDictionary: {fileID: 0}
