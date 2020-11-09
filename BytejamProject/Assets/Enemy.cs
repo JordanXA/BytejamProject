@@ -5,6 +5,14 @@ using System;
 
 public class Enemy : MonoBehaviour
 {
+    enum Direction {
+        Right, Left, Up, Down
+    }
+
+    public Sprite leftRightSprite;
+    public Sprite upDownSprite;
+    
+
     static readonly float DISTANCE_TO_POINT_BEFORE_CHANGING_DIRECTIONS = .01f;
     public float speed;
     Transform[] waypoints;
@@ -23,17 +31,53 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update() {
 
-        Vector3 movement = moveToTarget()*speed*Time.deltaTime;
+        Vector3 movement = moveToTarget();
 
-        transform.position = transform.position + movement;
+        transform.position = transform.position + movement*speed*Time.deltaTime;
 
         if ( movement.x == 0 && movement.y == 0 ) {
             targetPoint++; //advance to next point if moveToTarget() decided we dont need to move to this one anymore
         }
+
+        UpdateSprite(movement);
         
         if (targetPoint > waypoints.Length-1) {
             Destroy(gameObject);
         }
+    }
+
+    void UpdateSprite(Vector3 movement) {
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        Animator animator = GetComponent<Animator>();
+        
+        if(leftRightSprite != null) {
+            if (movement.x > 0) { //moving right
+                animator.enabled = true;
+                spriteRenderer.sprite = leftRightSprite;
+                spriteRenderer.flipX = false;
+                spriteRenderer.flipY = false;
+            } else if (movement.x < 0) { //moving left
+                animator.enabled = true;
+                spriteRenderer.sprite = leftRightSprite;
+                spriteRenderer.flipX = true;
+                spriteRenderer.flipY = false;
+            }
+        }
+
+        if(upDownSprite != null) {
+            if (movement.y > 0) { //moving up
+                animator.enabled = false;
+                spriteRenderer.sprite = upDownSprite;
+                spriteRenderer.flipX = false;
+                spriteRenderer.flipY = false;
+            } else if (movement.y < 0) { //moving down
+                animator.enabled = false;
+                spriteRenderer.sprite = upDownSprite;
+                spriteRenderer.flipX = false;
+                spriteRenderer.flipY = true;
+            }
+        }
+
     }
 
     Vector3 moveToTarget() {
