@@ -8,16 +8,10 @@ public class Tower : Placeable
     public float detectionRange;
     public float angleOffset;
     public float reloadTime;
-    float timeSinceLastShot;
+    protected float timeSinceLastShot;
     public GameObject bulletPrefab;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    Enemy getLastEnemy() {
+    protected Enemy getLastEnemy() {
         Enemy[] enemyList = GameObject.FindObjectsOfType<Enemy>();
         if (enemyList.Length > 0) {
             return enemyList[enemyList.Length-1];
@@ -27,7 +21,7 @@ public class Tower : Placeable
         }
     }
 
-    Enemy getLastEnemy(float range) {
+    protected Enemy getLastEnemy(float range) {
         List<Enemy> enemyList = new List<Enemy>(GameObject.FindObjectsOfType<Enemy>());
 
         enemyList.RemoveAll(enemy => Vector2.Distance(enemy.transform.position,transform.position) > range);

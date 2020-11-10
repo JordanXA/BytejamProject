@@ -97,6 +97,6 @@ MonoBehaviour:
   cost: 10
   detectionRange: 2
   angleOffset: -135
-  reloadTime: 0.1
-  bulletPrefab: {fileID: 6070012677506660964, guid: ff22e26211c13864c91f97b9819fb15f,
+  reloadTime: 0.2
+  bulletPrefab: {fileID: 6070012677506660964, guid: 965c5830aae26ef438e2d877ac4f2403,
     type: 3}
