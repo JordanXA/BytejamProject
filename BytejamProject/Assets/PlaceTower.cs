@@ -18,7 +18,9 @@ public class PlaceTower : MonoBehaviour
         {
 
             Tower = (GameObject)
-              Instantiate(TowerPrefab, transform.position, Quaternion.identity);
+              Instantiate(
+                GameObject.Find("GameManager").GetComponent<TowerManager>().Tower
+              , transform.position, Quaternion.identity);
         }
     }
 
