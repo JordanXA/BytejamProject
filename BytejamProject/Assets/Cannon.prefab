@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 970fa101dc00b6344aef445da0f2b131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectionRange: 4
   angleOffset: -135
   reloadTime: 2
   bulletPrefab: {fileID: 6070012677506660964, guid: ff22e26211c13864c91f97b9819fb15f,
