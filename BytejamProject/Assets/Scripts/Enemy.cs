@@ -90,12 +90,12 @@ public class Enemy : MonoBehaviour
                 animator.enabled = false;
                 spriteRenderer.sprite = upDownSprite;
                 spriteRenderer.flipX = false;
-                spriteRenderer.flipY = false;
+                spriteRenderer.flipY = true;
             } else if (movement.y < 0) { //moving down
                 animator.enabled = false;
                 spriteRenderer.sprite = upDownSprite;
                 spriteRenderer.flipX = false;
-                spriteRenderer.flipY = true;
+                spriteRenderer.flipY = false;
             }
         }
 
