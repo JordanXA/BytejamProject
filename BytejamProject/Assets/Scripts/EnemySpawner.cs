@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public Transform enemyPrefab;
+    public GameObject[] enemyPrefabs;
 
     public Transform spawnPoint;
 
@@ -43,6 +43,8 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemy()
     {
+        System.Random rand = new System.Random();
+        GameObject enemyPrefab = enemyPrefabs[rand.Next(enemyPrefabs.Length)];
         Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
     }
 }

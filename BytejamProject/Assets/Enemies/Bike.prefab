@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -842993584517298286}
   - component: {fileID: 6050237477150775733}
   m_Layer: 0
-  m_Name: Tank
+  m_Name: Bike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8969362783267944983}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.932, y: 2.71, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 4326872430171513394, guid: 730e5b7d9018d1345ae30862fa3a37ce,
+  m_Sprite: {fileID: 7097515043537599053, guid: ca390ec11d33ea2468c27ca03bcc7983,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -98,11 +98,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 440e5153359847a4780357e279a097b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftRightSprite: {fileID: 4326872430171513394, guid: 730e5b7d9018d1345ae30862fa3a37ce,
+  leftRightSprite: {fileID: 7097515043537599053, guid: ca390ec11d33ea2468c27ca03bcc7983,
     type: 3}
-  upDownSprite: {fileID: 21300000, guid: 2947ced70388ad54ca42394eb9daa0ef, type: 3}
-  health: 30
-  speed: 0.7
+  upDownSprite: {fileID: 21300000, guid: 89e90a1566f8c6641a24a93269d7739a, type: 3}
+  health: 10
+  speed: 2
 --- !u!95 &474342360978009622
 Animator:
   serializedVersion: 3
@@ -113,7 +113,7 @@ Animator:
   m_GameObject: {fileID: 8969362783267944983}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f04b44f937bef354b8f512cb5fe55e03, type: 2}
+  m_Controller: {fileID: 9100000, guid: 90f7ba28e681ad54db447bcd3b4e717c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -137,7 +137,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.15
 --- !u!50 &6050237477150775733
 Rigidbody2D:
   serializedVersion: 4
