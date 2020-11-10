@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
 
+    public float detectionRange;
     public float angleOffset;
     public float reloadTime;
     float timeSinceLastShot;
@@ -26,10 +27,23 @@ public class Tower : MonoBehaviour
         }
     }
 
+    Enemy getLastEnemy(float range) {
+        List<Enemy> enemyList = new List<Enemy>(GameObject.FindObjectsOfType<Enemy>());
+
+        enemyList.RemoveAll(enemy => Vector2.Distance(enemy.transform.position,transform.position) > range);
+
+        if (enemyList.Count > 0) {
+            return enemyList[enemyList.Count-1];
+        }
+        else {
+            return null;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        Enemy enemy = getLastEnemy();
+        Enemy enemy = getLastEnemy(detectionRange);
         bool towerShot = false;
 
         if (enemy != null) { //enemy exists
