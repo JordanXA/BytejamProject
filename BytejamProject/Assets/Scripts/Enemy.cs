@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     
 
     public float health;
+    float max_health;
 
     static readonly float DISTANCE_TO_POINT_BEFORE_CHANGING_DIRECTIONS = .01f;
     public float speed;
@@ -26,6 +27,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        max_health = health;
        waypoints = Waypoints.points;
        targetPoint = 0;
     }
@@ -42,6 +44,8 @@ public class Enemy : MonoBehaviour
         }
 
         UpdateSprite(movement);
+        float hColor = health/max_health;
+        GetComponent<SpriteRenderer>().color = new Color(1f,1f*hColor,1f*hColor,1f);
         
         if (targetPoint > waypoints.Length-1) { //object reached end of scene. destroy and remove health.
             GlobalVariables global = GameObject.Find("GameManager").GetComponent<GlobalVariables>();
