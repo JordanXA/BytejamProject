@@ -19,7 +19,6 @@ public class Bullet : MonoBehaviour
     void FixedUpdate()
     {
         transform.position += new Vector3(velocity.x, velocity.y, 0);
-        Debug.Log(velocity.magnitude);
     }
 
     private void OnBecameInvisible() {

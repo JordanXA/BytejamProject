@@ -18,7 +18,12 @@ public class Tower : MonoBehaviour
 
     Enemy getLastEnemy() {
         Enemy[] enemyList = GameObject.FindObjectsOfType<Enemy>();
-        return enemyList[enemyList.Length-1];
+        if (enemyList.Length > 0) {
+            return enemyList[enemyList.Length-1];
+        }
+        else {
+            return null;
+        }
     }
 
     // Update is called once per frame
