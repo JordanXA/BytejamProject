@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     public Sprite upDownSprite;
     
 
+    public float health;
+
     static readonly float DISTANCE_TO_POINT_BEFORE_CHANGING_DIRECTIONS = .01f;
     public float speed;
     Transform[] waypoints;
@@ -45,6 +47,19 @@ public class Enemy : MonoBehaviour
             GlobalVariables global = GameObject.Find("GameManager").GetComponent<GlobalVariables>();
             global.health -= 1;
             Destroy(gameObject);
+        }
+
+        if (health <= 0) {
+            Destroy(gameObject);
+        }
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        Bullet bullet = other.gameObject.GetComponent<Bullet>();
+        if (bullet != null) {
+            health -= bullet.damage;
+            Destroy(bullet.gameObject);
         }
     }
 

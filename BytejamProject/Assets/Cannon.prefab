@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 892829809229413170}
   - component: {fileID: 249954424342433999}
+  - component: {fileID: -6718117555513580889}
   m_Layer: 0
   m_Name: Cannon
   m_TagString: Untagged
@@ -25,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2585339330285977809}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.610213, y: -3.7861629, z: -0.37226564}
-  m_LocalScale: {x: 6, y: 6, z: 1}
+  m_LocalPosition: {x: 4.610213, y: -3.7861629, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -81,3 +82,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-6718117555513580889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2585339330285977809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970fa101dc00b6344aef445da0f2b131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angleOffset: -135
+  reloadTime: 2
+  bulletPrefab: {fileID: 6070012677506660964, guid: ff22e26211c13864c91f97b9819fb15f,
+    type: 3}
