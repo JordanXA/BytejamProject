@@ -10,6 +10,7 @@ public class EnemySpawner : MonoBehaviour
     public Transform spawnPoint;
 
     public float timeBetweenWaves = 5f;
+    public float timeBetweenEnemies = .5f;
     private float countdown = 2f;
 
     
@@ -34,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < waveIndex; i++)
         {
             SpawnEnemy();
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(timeBetweenEnemies);
         }
 
 

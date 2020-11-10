@@ -102,7 +102,7 @@ MonoBehaviour:
     type: 3}
   upDownSprite: {fileID: 21300000, guid: 2947ced70388ad54ca42394eb9daa0ef, type: 3}
   health: 30
-  speed: 1
+  speed: 0.7
 --- !u!95 &474342360978009622
 Animator:
   serializedVersion: 3

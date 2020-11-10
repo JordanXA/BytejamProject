@@ -16,9 +16,10 @@ public class Bullet : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         transform.position += new Vector3(velocity.x, velocity.y, 0);
+        Debug.Log(velocity.magnitude);
     }
 
     private void OnBecameInvisible() {
