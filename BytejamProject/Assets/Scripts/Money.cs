@@ -11,6 +11,7 @@ public class Money : MonoBehaviour{
     GlobalVariables global;
 
     void Start() {
+        TotMoney = GameObject.Find("TotalMoney").GetComponent<Text>();
         global = GameObject.Find("GameManager").GetComponent<GlobalVariables>();
     }    
     

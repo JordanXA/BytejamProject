@@ -58,6 +58,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0) {
             GlobalVariables global = GameObject.Find("GameManager").GetComponent<GlobalVariables>();
             global.killCount++;
+            global.Money+=1;
             Destroy(gameObject);
         }
 

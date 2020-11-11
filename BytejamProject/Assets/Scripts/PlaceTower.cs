@@ -20,8 +20,9 @@ public class PlaceTower : MonoBehaviour
             int cost = towerPrefab.GetComponent<Placeable>().cost;
             GlobalVariables global = GameObject.Find("GameManager").GetComponent<GlobalVariables>();
 
-            if (global.Money > cost)
+            if (global.Money >= cost)
             {
+                global.Money -= cost;
                 Tower = (GameObject)
                   Instantiate(
                     towerPrefab
