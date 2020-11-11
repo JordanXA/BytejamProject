@@ -12,9 +12,13 @@ public class Tower : Placeable
     public GameObject bulletPrefab;
 
     protected Enemy getLastEnemy() {
-        Enemy[] enemyList = GameObject.FindObjectsOfType<Enemy>();
-        if (enemyList.Length > 0) {
-            return enemyList[enemyList.Length-1];
+        List<Enemy> enemyList = new List<Enemy>(GameObject.FindObjectsOfType<Enemy>());
+
+        //sorts list so last element is the furthest enemy.
+        enemyList.Sort(SortByDistanceTravelled);
+
+        if (enemyList.Count > 0) {
+            return enemyList[enemyList.Count-1];
         }
         else {
             return null;
@@ -26,12 +30,19 @@ public class Tower : Placeable
 
         enemyList.RemoveAll(enemy => Vector2.Distance(enemy.transform.position,transform.position) > range);
 
+        //sorts list so last element is the furthest enemy.
+        enemyList.Sort(SortByDistanceTravelled);
+
         if (enemyList.Count > 0) {
             return enemyList[enemyList.Count-1];
         }
         else {
             return null;
         }
+    }
+
+    protected static int SortByDistanceTravelled(Enemy e1, Enemy e2) {
+        return e1.distTravelled.CompareTo(e2.distTravelled);
     }
 
     // Update is called once per frame

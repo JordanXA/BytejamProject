@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 30
-  detectionRange: 100
+  detectionRange: 5
   angleOffset: -135
   reloadTime: 5
   bulletPrefab: {fileID: 6070012677506660964, guid: 7e077217d8f6f2f49b98d4f693cf9e5e,

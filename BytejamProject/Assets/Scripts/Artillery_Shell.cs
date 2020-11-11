@@ -9,6 +9,7 @@ public class Artillery_Shell : MonoBehaviour
     public float damage;
     public Vector2 target;
     public float speed;
+    public float maxRange; //furthest away you expect enemies to be
     Vector2 velocity;
 
     float distanceToTarget;
@@ -20,9 +21,12 @@ public class Artillery_Shell : MonoBehaviour
         Vector2 posDiff = target - (Vector2)transform.position;
         posDiff.Normalize(); //fancy math for angle
         float angle = Mathf.Atan2(posDiff.y, posDiff.x);
+        
+        distanceToTarget = Vector2.Distance(transform.position, target);
+        float minDistToTarget = Mathf.Min(distanceToTarget, maxRange/2);
+        speed *= minDistToTarget / maxRange;
         velocity = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * speed;
 
-        distanceToTarget = Vector2.Distance(transform.position, target);
     }
 
     // Update is called once per frame
@@ -33,9 +37,9 @@ public class Artillery_Shell : MonoBehaviour
         
         float distPercent = (distanceTravelled/distanceToTarget);
         //float heightFactor = Mathf.Abs(distPercent*2-1)*1.5f;
-        float heightFactor = Mathf.Pow((distPercent*2-1),8)*1.5f;
+        float heightFactor = (Mathf.Pow((distPercent*2-1),2)*1.5f+1)/2;
         transform.localScale = new Vector3(scaleFactor/heightFactor,scaleFactor/heightFactor,1);
-        GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,1f*heightFactor);
+        GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,1f*(heightFactor));
 
         if (distanceTravelled>distanceToTarget) {
             //explode
