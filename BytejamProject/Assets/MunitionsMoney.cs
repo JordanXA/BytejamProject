@@ -19,6 +19,10 @@ public class MunitionsMoney : MonoBehaviour
         float timeSinceSpawned = Time.time - timeSpawned;
         float percentDissapeared = (1-timeSinceSpawned/timeToDissapear);
 
+        if(percentDissapeared < 0) {
+            Destroy(gameObject);
+        }
+
         //weird weighted average
         GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,(percentDissapeared*2+1)/3);
     }

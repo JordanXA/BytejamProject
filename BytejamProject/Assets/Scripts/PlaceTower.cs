@@ -14,6 +14,7 @@ public class PlaceTower : MonoBehaviour
 
     void Start() {
         munitionsPlaced = 1;
+        GameObject.Find("MunitionsCost").GetComponent<UnityEngine.UI.Text>().text = "15";
     }
 
     void OnMouseUp()
@@ -33,6 +34,7 @@ public class PlaceTower : MonoBehaviour
             {
                 if (towerPrefab.GetComponent<Munitions>() != null) {
                     munitionsPlaced++;
+                    GameObject.Find("MunitionsCost").GetComponent<UnityEngine.UI.Text>().text = (15*munitionsPlaced).ToString();
                 }
 
                 global.Money -= cost;
