@@ -18,7 +18,6 @@ public class Money : MonoBehaviour{
     // Update is called once per frame
     void Update()
     {
-        UnityEngine.Debug.Log(global.Money);
         string totMoney = Convert.ToString(global.Money);
         TotMoney.text = totMoney;
     }
