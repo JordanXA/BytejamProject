@@ -12,8 +12,10 @@ public class Enemy : MonoBehaviour
     public Sprite leftRightSprite;
     public Sprite upDownSprite;
     
+    public float distTravelled; //tracks how far the enemy has travelled
 
     public float health;
+    float max_health;
 
     static readonly float DISTANCE_TO_POINT_BEFORE_CHANGING_DIRECTIONS = .01f;
     public float speed;
@@ -26,8 +28,9 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       waypoints = Waypoints.points;
-       targetPoint = 0;
+        max_health = health;
+        waypoints = Waypoints.points;
+        targetPoint = 0;
     }
 
     // Update is called once per frame
@@ -35,6 +38,7 @@ public class Enemy : MonoBehaviour
 
         Vector3 movement = moveToTarget();
 
+        distTravelled += Vector3.Magnitude(movement*speed*Time.deltaTime);
         transform.position = transform.position + movement*speed*Time.deltaTime;
 
         if ( movement.x == 0 && movement.y == 0 ) {
@@ -42,6 +46,8 @@ public class Enemy : MonoBehaviour
         }
 
         UpdateSprite(movement);
+        float hColor = health/max_health;
+        GetComponent<SpriteRenderer>().color = new Color(1f,1f*hColor,1f*hColor,1f);
         
         if (targetPoint > waypoints.Length-1) { //object reached end of scene. destroy and remove health.
             GlobalVariables global = GameObject.Find("GameManager").GetComponent<GlobalVariables>();
@@ -50,6 +56,8 @@ public class Enemy : MonoBehaviour
         }
 
         if (health <= 0) {
+            GlobalVariables global = GameObject.Find("GameManager").GetComponent<GlobalVariables>();
+            global.killCount++;
             Destroy(gameObject);
         }
 
@@ -86,12 +94,12 @@ public class Enemy : MonoBehaviour
                 animator.enabled = false;
                 spriteRenderer.sprite = upDownSprite;
                 spriteRenderer.flipX = false;
-                spriteRenderer.flipY = false;
+                spriteRenderer.flipY = true;
             } else if (movement.y < 0) { //moving down
                 animator.enabled = false;
                 spriteRenderer.sprite = upDownSprite;
                 spriteRenderer.flipX = false;
-                spriteRenderer.flipY = true;
+                spriteRenderer.flipY = false;
             }
         }
 

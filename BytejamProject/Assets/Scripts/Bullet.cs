@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float angle;
     public float speed;
-    public Vector2 velocity;
+    protected Vector2 velocity;
     public float damage;
     // Start is called before the first frame update
     void Start()

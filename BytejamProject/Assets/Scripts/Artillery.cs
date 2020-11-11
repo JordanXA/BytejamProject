@@ -2,17 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tower : Placeable
+public class Artillery : Tower
 {
 
-    public float detectionRange;
-    public float angleOffset;
-    public float reloadTime;
-    protected float timeSinceLastShot;
-    public GameObject bulletPrefab;
-
-    protected Enemy getLastEnemy() {
+    private new Enemy getLastEnemy(float range) {
         List<Enemy> enemyList = new List<Enemy>(GameObject.FindObjectsOfType<Enemy>());
+
+        //makes sure enemies are further than the range value
+        enemyList.RemoveAll(enemy => Vector2.Distance(enemy.transform.position,transform.position) < range);
 
         //sorts list so last element is the furthest enemy.
         enemyList.Sort(SortByDistanceTravelled);
@@ -23,26 +20,6 @@ public class Tower : Placeable
         else {
             return null;
         }
-    }
-
-    protected Enemy getLastEnemy(float range) {
-        List<Enemy> enemyList = new List<Enemy>(GameObject.FindObjectsOfType<Enemy>());
-
-        enemyList.RemoveAll(enemy => Vector2.Distance(enemy.transform.position,transform.position) > range);
-
-        //sorts list so last element is the furthest enemy.
-        enemyList.Sort(SortByDistanceTravelled);
-
-        if (enemyList.Count > 0) {
-            return enemyList[enemyList.Count-1];
-        }
-        else {
-            return null;
-        }
-    }
-
-    protected static int SortByDistanceTravelled(Enemy e1, Enemy e2) {
-        return e1.distTravelled.CompareTo(e2.distTravelled);
     }
 
     // Update is called once per frame
@@ -61,7 +38,7 @@ public class Tower : Placeable
             transform.rotation = currentRotation;
 
             if (timeSinceLastShot > reloadTime) {
-                Shoot(enemy, angle);
+                Shoot(enemy);
                 towerShot = true;
                 timeSinceLastShot = 0;
             }
@@ -73,8 +50,8 @@ public class Tower : Placeable
 
     }
 
-    void Shoot(Enemy enemy, float angle) {
+    void Shoot(Enemy enemy) {
         GameObject bullet = Instantiate(bulletPrefab, transform.position, new Quaternion());
-        bullet.GetComponent<Bullet>().angle = angle;
+        bullet.GetComponent<Artillery_Shell>().target = enemy.transform.position;
     }
 }
