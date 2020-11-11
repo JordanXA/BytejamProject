@@ -16,11 +16,19 @@ public class PlaceTower : MonoBehaviour
 
         if (CanPlaceTower())
         {
+            GameObject towerPrefab = GameObject.Find("GameManager").GetComponent<TowerManager>().Tower;
+            int cost = towerPrefab.GetComponent<Placeable>().cost;
+            GlobalVariables global = GameObject.Find("GameManager").GetComponent<GlobalVariables>();
 
-            Tower = (GameObject)
-              Instantiate(
-                GameObject.Find("GameManager").GetComponent<TowerManager>().Tower
-              , transform.position, Quaternion.identity);
+            if (global.Money > cost)
+            {
+                Tower = (GameObject)
+                  Instantiate(
+                    towerPrefab
+                  , transform.position, Quaternion.identity);
+
+            }
+
         }
     }
 
