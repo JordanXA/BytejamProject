@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     public Sprite leftRightSprite;
     public Sprite upDownSprite;
     
+    public float distTravelled; //tracks how far the enemy has travelled
 
     public float health;
     float max_health;
@@ -28,8 +29,8 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         max_health = health;
-       waypoints = Waypoints.points;
-       targetPoint = 0;
+        waypoints = Waypoints.points;
+        targetPoint = 0;
     }
 
     // Update is called once per frame
@@ -37,6 +38,7 @@ public class Enemy : MonoBehaviour
 
         Vector3 movement = moveToTarget();
 
+        distTravelled += Vector3.Magnitude(movement*speed*Time.deltaTime);
         transform.position = transform.position + movement*speed*Time.deltaTime;
 
         if ( movement.x == 0 && movement.y == 0 ) {
