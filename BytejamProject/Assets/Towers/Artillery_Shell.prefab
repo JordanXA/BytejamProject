@@ -98,4 +98,6 @@ MonoBehaviour:
   explosionRadius: 1
   damage: 15
   target: {x: 0, y: 0}
-  speed: 0.05
+  speed: 0.1
+  minRange: 5
+  maxRange: 10
