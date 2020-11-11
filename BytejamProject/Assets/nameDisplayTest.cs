@@ -8,6 +8,6 @@ public class nameDisplayTest : MonoBehaviour
     private void OnGUI()
     {
         
-        changeText.text = GlobalVariables.playerName;
+        changeText.text = PlayerPrefs.GetString("Player Name");
     }
 }

@@ -1,17 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class NameStorage : MonoBehaviour
 {
+
    
+
     public GameObject inputField;
-    
+    public Text changeText;
+
 
     public void StoreName()
     {
         
-        GlobalVariables.playerName = inputField.GetComponent<Text>().text;
+       
+
+        PlayerPrefs.SetString("Player Name", inputField.GetComponent<Text>().text);
+
+        changeText.text = PlayerPrefs.GetString("Player Name");
+    }
+
+    private void OnGUI()
+    {
+        
+
+        PlayerPrefs.SetString("Player Name", inputField.GetComponent<Text>().text);
+
+        changeText.text = PlayerPrefs.GetString("Player Name");
     }
 }

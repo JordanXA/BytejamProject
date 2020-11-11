@@ -17,4 +17,14 @@ public class Menu2Name : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
+
+    public void GameToLame()
+    {
+        SceneManager.LoadScene("LossScene");
+    }
+
+    public void LameToMain()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }

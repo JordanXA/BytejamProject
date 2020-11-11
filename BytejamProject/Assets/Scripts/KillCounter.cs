@@ -10,5 +10,7 @@ public class KillCounter : MonoBehaviour
     {
         GlobalVariables global = GameObject.Find("GameManager").GetComponent<GlobalVariables>();
         changeText.text = global.killCount.ToString();
+
+        PlayerPrefs.SetString("Player Score", changeText.GetComponent<Text>().text);
     }
 }
