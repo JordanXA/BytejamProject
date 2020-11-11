@@ -12,6 +12,10 @@ public class PlaceTower : MonoBehaviour
         return Tower == null;
     }
 
+    void Start() {
+        munitionsPlaced = 1;
+    }
+
     void OnMouseUp()
     {
 

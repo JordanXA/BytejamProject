@@ -39,11 +39,19 @@ public class EnemySpawner : MonoBehaviour
         if (countdown < 0f)
         {
             StartCoroutine(SpawnWave(waveIndex));
-            //float waveLength = timeBetweenEnemies * waves[waveIndex].Count;
-            countdown = timeBetweenWaves;
+            float waveLength = timeBetweenEnemies * waves[waveIndex].Count;
+            countdown = timeBetweenWaves + waveLength;
             waveIndex++;
         }
         countdown -= Time.deltaTime;
+
+        if (waveIndex > waves.Count-1) {
+            WinGame();
+        }
+    }
+
+    void WinGame() {
+
     }
 
     IEnumerator SpawnWave(int waveIndex)

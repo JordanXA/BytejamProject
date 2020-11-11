@@ -101,8 +101,11 @@ MonoBehaviour:
   leftRightSprite: {fileID: 7097515043537599053, guid: ca390ec11d33ea2468c27ca03bcc7983,
     type: 3}
   upDownSprite: {fileID: 21300000, guid: 89e90a1566f8c6641a24a93269d7739a, type: 3}
+  distTravelled: 0
   health: 10
   speed: 2
+  moneyPrefab: {fileID: 277705488410294223, guid: d802965aabd43fc499fe2dcb91fd8b5c,
+    type: 3}
 --- !u!95 &474342360978009622
 Animator:
   serializedVersion: 3
