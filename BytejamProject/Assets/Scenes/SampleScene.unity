@@ -641,7 +641,7 @@ MonoBehaviour:
   - {fileID: 8969362783267944983, guid: dafd9aea8487e624dbac59120f33df63, type: 3}
   spawnPoint: {fileID: 2088825077}
   timeBetweenWaves: 8
-  timeBetweenEnemies: 1
+  timeBetweenEnemies: 0.5
 --- !u!114 &100192106
 MonoBehaviour:
   m_ObjectHideFlags: 0

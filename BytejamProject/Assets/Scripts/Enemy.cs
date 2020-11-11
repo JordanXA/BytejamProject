@@ -21,6 +21,9 @@ public class Enemy : MonoBehaviour
     public float speed;
     Transform[] waypoints;
     int targetPoint;
+    public GameObject moneyPrefab;
+
+    System.Random rand = new System.Random();
 
     Vector3 targetPos() {
         return waypoints[targetPoint].position;
@@ -58,7 +61,10 @@ public class Enemy : MonoBehaviour
         if (health <= 0) {
             GlobalVariables global = GameObject.Find("GameManager").GetComponent<GlobalVariables>();
             global.killCount++;
-            global.Money+=1;
+            if(rand.NextDouble() > .8f) {
+                Vector3 randomPos = new Vector3((float)rand.NextDouble(), (float)rand.NextDouble(), 0);
+                Instantiate(moneyPrefab, transform.position+randomPos, transform.rotation);
+            }
             Destroy(gameObject);
         }
 
