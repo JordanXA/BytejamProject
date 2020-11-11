@@ -7,10 +7,8 @@ public class GlobalVariables : MonoBehaviour
 {
     public float health = 10;
     public float maxHealth = 10;
-<<<<<<< HEAD
     public int Money = 30;
     public int maxMoney = 999;
-=======
     public int killCount = 0;
     
     void Update()
@@ -22,5 +20,4 @@ public class GlobalVariables : MonoBehaviour
         }
     }
 
->>>>>>> 92f35a2e0afbcbc9fc03fe5dcb70d2fae03224f3
 }
