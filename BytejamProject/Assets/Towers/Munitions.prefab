@@ -94,4 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 057638454d70be543a24aa4eb304fea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 5
+  cost: 15
+  moneyPrefab: {fileID: 277705488410294223, guid: d802965aabd43fc499fe2dcb91fd8b5c,
+    type: 3}
+  timeToSpawnMoney: 5
