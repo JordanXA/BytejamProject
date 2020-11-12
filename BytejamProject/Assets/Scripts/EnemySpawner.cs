@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Xml;
 using System;
 
-
+//Author: Kyler VanDerAa and Jordan Andersen
 public class EnemySpawner : MonoBehaviour
 {
     public TextAsset waveFile;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Author: Kyler VanDerAa
 public class Menu2Name : MonoBehaviour
 {
    

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+//Author: Jordan Andersen
 public class Munitions : Placeable
 {
     public GameObject moneyPrefab;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Author: All of us
 public class GlobalVariables : MonoBehaviour
 {
     public float health = 10;

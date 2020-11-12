@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Author: Kyler VanDerAa
 public class KillCounter : MonoBehaviour
 {
     public Text changeText;

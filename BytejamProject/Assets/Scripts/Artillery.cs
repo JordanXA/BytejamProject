@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Author: Jordan Andersen
 public class Artillery : Tower
 {
 

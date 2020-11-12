@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
+//Author: Jordan Andersen and Kyler VanDerAa
 public class Healthbar : MonoBehaviour
 {
     public float maxWidth = 280;

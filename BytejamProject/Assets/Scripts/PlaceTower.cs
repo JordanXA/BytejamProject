@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Author: Luc Rurup
 public class PlaceTower : MonoBehaviour
 {
     public GameObject TowerPrefab;

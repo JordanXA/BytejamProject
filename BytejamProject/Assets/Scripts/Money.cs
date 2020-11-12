@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using System.Diagnostics;
 
+//Author: Luc Rurup
 public class Money : MonoBehaviour{
 
     public Text TotMoney;
